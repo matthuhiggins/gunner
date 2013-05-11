@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require File.expand_path('../../lib/gunner',  __FILE__)
+Gunner.run_command Gunner::Command.new(ARGV)

@@ -1,9 +1,9 @@
 # -*- encoding: utf-8 -*-
  
 Gem::Specification.new do |s|
-  s.name = 'arelastic'
-  s.version = '0.2.2'
-  s.summary = 'A gist runner'
+  s.name        = 'gunner'
+  s.version     = '0.0.1'
+  s.summary     = 'A gist runner'
   s.description = 'Execute gists from the command line'
 
   s.required_ruby_version     = '>= 1.9.3'
@@ -14,6 +14,6 @@ Gem::Specification.new do |s|
   s.email             = 'developer@matthewhiggins.com'
   s.homepage          = 'http://github.com/matthuhiggins/gunner'
 
-  s.extra_rdoc_files = ['README.rdoc']
+  s.extra_rdoc_files = ['README.md']
   s.files = Dir['{lib,test}/**/*.rb']
 end
