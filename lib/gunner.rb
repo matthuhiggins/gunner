@@ -1,13 +1,23 @@
+
 module Gunner
-  autoload :Command, 'gunner/command'
+  autoload :Command,    'gunner/command'
+  autoload :Connection, 'gunner/connection'
 
   class << self
-    def run(token)
-      
+    def run(gist_token)
+      files = Gunner::Connection.gist_info(gist_token)['files']
+
+      if files['Gunfile'].nil?
+        raise "Gist #{gist_token} is missing Gunfile"
+      end
+
+      files.each do |key, attributes|
+        Gunner::Connection.download attributes['raw_url']
+      end
     end
 
     def run_command(command)
-      
+      run command.gist_token
     end
   end
 end
