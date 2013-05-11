@@ -1,0 +1,13 @@
+PATH
+  remote: .
+  specs:
+    gunner (0.0.1)
+
+GEM
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  gunner!
