@@ -10,10 +10,6 @@ module Gunner
       if files['Gunfile'].nil?
         raise "Gist #{gist_token} is missing Gunfile"
       end
-
-      files.each do |key, attributes|
-        Gunner::Connection.download attributes['raw_url']
-      end
     end
 
     def run_command(command)
