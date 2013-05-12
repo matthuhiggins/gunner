@@ -9,11 +9,6 @@ module Gunner
         JSON.parse gist_request("https://api.github.com/gists/#{gist_token}").body
       end
 
-      def download(raw_url)
-        p raw_url
-        p gist_request(raw_url).body
-      end
-
       def gist_request(url)
         uri = URI.parse(url)
         request = Net::HTTP::Get.new(uri.request_uri)
