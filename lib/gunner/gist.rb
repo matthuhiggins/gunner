@@ -14,7 +14,7 @@ module Gunner
     end
 
     def info
-      Gunner::Connection.gist_info(token)
+      @info ||= Gunner::Connection.json_request("https://api.github.com/gists/#{token}")
     end
 
     def directory_path

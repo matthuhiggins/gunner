@@ -25,9 +25,9 @@ module Gunner
 
     def download(attributes)
       raw_url = attributes['raw_url']
-      response = Gunner::Connection.gist_request(raw_url)
+      response = Gunner::Connection.request(raw_url)
       while raw_url = response['location']
-        response = Gunner::Connection.gist_request(raw_url)
+        response = Gunner::Connection.request(raw_url)
       end
       File.open("#{gist.directory_path}/#{attributes['filename']}", 'wb') do |file|
         file.write(response.body)

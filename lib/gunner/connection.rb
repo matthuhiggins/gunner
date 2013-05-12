@@ -5,11 +5,11 @@ require 'json'
 module Gunner
   class Connection
     class << self
-      def gist_info(gist_token)
-        JSON.parse gist_request("https://api.github.com/gists/#{gist_token}").body
+      def json_request(url)
+        JSON.parse request(url).body
       end
 
-      def gist_request(url)
+      def request(url)
         uri = URI.parse(url)
         request = Net::HTTP::Get.new(uri.request_uri)
         http = Net::HTTP.new(uri.host, uri.port)
