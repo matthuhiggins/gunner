@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
   s.email             = 'developer@matthewhiggins.com'
   s.homepage          = 'http://github.com/matthuhiggins/gunner'
 
-  s.extra_rdoc_files = ['README.md']
-  s.files = Dir['{lib,test}/**/*.rb']
+  s.extra_rdoc_files  = ['README.md']
+  s.files             = `git ls-files`.split("\n")
+  s.executables       = ['gunner']
 end
